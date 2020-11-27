@@ -11,14 +11,14 @@ body {
 }
 
 nav a {
-	text-decoration: none; 
+	text-decoration: none;
 	color: white;
 	font-size: 1.2em;
 	padding: 5px;
 }
 
 nav li {
-	list-style-type: none; 
+	list-style-type: none;
 	display: inline;
 	margin-right: 15px;
 }
@@ -31,7 +31,7 @@ nav {
 }
 
 nav a:hover {
-	color: #e80729 ;
+	color: #e80729;
 	background-color: white;
 	border-radius: 5px;
 }
@@ -49,7 +49,7 @@ header .title p {
 }
 
 h2 {
-	color:  #e80729;
+	color: #e80729;
 }
 
 h3 {
@@ -57,8 +57,8 @@ h3 {
 }
 
 #content p {
- 	text-align: justify;
- }
+	text-align: justify;
+}
 
 .img-profile {
 	float: left;
@@ -80,7 +80,7 @@ h3 {
 #profile:target {
 	bottom: 0;
 	right: 0;
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(0, 0, 0, .8);
 	width: auto;
 	height: auto;
 }
@@ -88,7 +88,7 @@ h3 {
 #bg-profile {
 	background-color: white;
 	overflow: auto;
-	width: 50%;
+	width: 60%;
 	max-height: 50%;
 	margin: auto;
 	transform: translateY(50%);
@@ -130,10 +130,10 @@ footer {
 }
 
 .card {
-   	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-   	border-radius: 5px;
-   	padding: 20px;
-   	margin-top: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
 }
 
 main {
@@ -146,8 +146,26 @@ main {
 	width: 75%;
 }
 
-.profile header{
+.profile header {
 	text-align: center;
+}
+
+#content #title {
+	width: 100%;
+}
+
+#content #intro {
+	display: inline-block;
+}
+
+#waktu {
+	display: inline-block;
+	float: right;
+	line-height: 52px;
+}
+
+#waktu p {
+	display: inline;
 }
 
 aside {
@@ -161,26 +179,55 @@ aside {
 	width: 200px;
 }
 
-aside .waktu p {
-	display: inline;
+aside #biodata th,
+aside #biodata td {
+	text-align: left;
+	width: 50%;
+}
+
+aside .profile #biodata table {
+	margin: 0 auto;
 }
 
 @media screen and (max-width: 1000px) {
+
 	#content,
-   	aside {
-     	width: 100%;
-     	padding: 0;
-   	}
+	aside {
+		width: 100%;
+		padding: 0;
+	}
 
-   	#profile a {
-   		margin-left: -5%;
-   	}
+	#profile a {
+		margin-left: -5%;
+	}
 
-   	.img-profile {
-   		margin-bottom: 20px; 
-   	}
+	.img-profile {
+		margin-bottom: 20px;
+	}
+}
 
-   	aside .waktu p {
-   		display: none;
-   	}
+@media screen and (max-width: 411px) {
+	header .title p {
+		font-size: .8em;
+	}
+
+	#content #title {
+		text-align: center;
+	}
+
+	#content #title #intro p,
+	#content #title #waktu p {
+		margin: 0;
+	}
+
+	#content #title #waktu {
+		float: none;
+		display: block;
+	}
+
+	.img-profile {
+		float: none;
+		width: 100%;
+		margin: 0;
+	}
 }

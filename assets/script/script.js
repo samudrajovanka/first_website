@@ -1,11 +1,5 @@
-let nama = prompt("Masukan nama terlebih dahulu");
-
-if (nama) {
-	document.getElementById('intro').innerHTML = 'Selamat datang ' + nama + ' di GAT';
-}
-
 function getTanggal() {
-	let tanggalLengkap = new String();
+    let tanggalLengkap = new String();
     let namaHari = ("Minggu Senin Selasa Rabu Kamis Jumat Sabtu");
     namaHari = namaHari.split(" ");
     let namaBulan = ("Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember");
@@ -15,37 +9,38 @@ function getTanggal() {
     let tanggal = tgl.getDate();
     let bulan = tgl.getMonth();
     let tahun = tgl.getFullYear();
-    tanggalLengkap = namaHari[hari] + ", " +tanggal + " " + namaBulan[bulan] + " " + tahun;
+    tanggalLengkap = namaHari[hari] + ", " + tanggal + " " + namaBulan[bulan] + " " + tahun;
 
     return tanggalLengkap;
 }
 
-window.setTimeout("getJam()",1000);  
-function getJam() {   
-	let tanggal = new Date();  
-	setTimeout("getJam()",1000);  
-	document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+window.setTimeout("getJam()", 1000);
+function getJam() {
+    let tanggal = new Date();
+    setTimeout("getJam()", 1000);
+    document.getElementById("jam").innerHTML = tanggal.getHours() + ":" + tanggal.getMinutes() + ":" + tanggal.getSeconds();
+}
+
+function getAge() {
+    let tgl = new Date();
+    let bulan = tgl.getMonth();
+    let tahun = tgl.getFullYear();
+
+    let umur = 0;
+    let tahun_lahir = 2001;
+    let bulan_lahir = 9;
+    let tanggal_lahir = 20;
+
+    if (bulan >= bulan_lahir) {
+        if (tanggal_lahir >= 20) {
+            umur = tahun - tahun_lahir;
+        }
+    } else {
+        umur = tahun - tahun_lahir - 1;
+    }
+
+    return umur;
 }
 
 document.getElementById("hari").innerHTML = getTanggal();
-
-let tgl = new Date();
-let tanggal = tgl.getDate();
-let bulan = tgl.getMonth();
-let tahun = tgl.getFullYear();
-
-let umur = 0;
-let tahun_lahir = 2001;
-let bulan_lahir = 9;
-let tanggal_lahir = 20;
-
-if(bulan >= bulan_lahir) {
-    if(tanggal_lahir >= 20) {
-        umur = tahun - tahun_lahir;
-        console.log(umur);
-        document.getElementById("#age").innerHTML = umur + " tahun";
-    }
-} else {
-    umur = tahun - tahun_lahir - 1;
-    document.getElementById("age").innerHTML = umur + " tahun";
-}
+document.getElementById("age").innerHTML = getAge() + " tahun";
