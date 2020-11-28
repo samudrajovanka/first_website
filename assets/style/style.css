@@ -210,6 +210,10 @@ aside .profile #biodata table {
 	header .title p {
 		font-size: .8em;
 	}
+	
+	nav a {
+		font-size: 1em;
+	}
 
 	#content #title {
 		text-align: center;
